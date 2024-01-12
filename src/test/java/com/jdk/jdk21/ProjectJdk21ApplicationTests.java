@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.LinkedList;
@@ -23,6 +25,8 @@ class ProjectJdk21ApplicationTests {
     private Executor taskExecutor;
 
     @Test
+    @Async
+    @Lazy
     void contextLoads() {
 
         Thread.ofVirtual().start(() -> System.out.println("NEW"));
