@@ -60,12 +60,17 @@ class ProjectJdk21ApplicationTests {
             });
             executorService.shutdown();
         }
-        Optional.of(temp).ifPresentOrElse(System.out::println,()-> System.out.println("null"));
-        strings.stream().flatMap(s-> Optional.ofNullable(s).stream()).forEach(System.out::println);
+        Optional.of(temp).ifPresentOrElse(System.out::println, () -> System.out.println("null"));
+        strings.stream().flatMap(s -> Optional.ofNullable(s).stream()).forEach(System.out::println);
     }
 
     @Test
     void Test() {
+
+    }
+
+    @Test
+    void Test2() {
 
     }
 
